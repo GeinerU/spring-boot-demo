@@ -13,7 +13,7 @@ public class GreetingController {
     @Autowired
     private MessageSource messageSource;
 
-    @GetMapping("/saludo")  // <-- Asegúrate de que coincida con la URL que estás llamando
+    @GetMapping("/saludo")
     public String greet(@RequestHeader(name = "Accept-Language", required = false) String language) {
         Locale locale = Locale.forLanguageTag(language != null ? language : "en");
         return messageSource.getMessage("welcome.message", null, locale);
